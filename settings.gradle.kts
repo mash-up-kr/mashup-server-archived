@@ -1,2 +1,3 @@
-rootProject.name = "server"
-include("mashup-api", "mashup-application")
+rootProject.name = "mashup-server"
+include("mashup-api")
+include("mashup-domain")
