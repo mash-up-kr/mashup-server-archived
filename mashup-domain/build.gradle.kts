@@ -4,10 +4,10 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
-tasks.bootJar {
-    enabled = false
-}
-
 tasks.jar {
     enabled = true
+}
+
+tasks.bootJar {
+    enabled = false
 }
