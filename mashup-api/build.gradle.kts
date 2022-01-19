@@ -1,11 +1,11 @@
+val swaggerVersion: String by project
+
 dependencies {
     implementation(project(":mashup-domain"))
 
-    // spring
     implementation("org.springframework.boot:spring-boot-starter-web")
 
-    // library
-    implementation("io.springfox:springfox-boot-starter:3.0.0")
+    implementation("io.springfox:springfox-boot-starter:$swaggerVersion")
 }
 
 tasks.jar {
