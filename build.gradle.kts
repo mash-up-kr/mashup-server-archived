@@ -4,6 +4,7 @@ plugins {
 	id("org.springframework.boot") version "2.6.2"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("jacoco")
+	id("org.sonarqube") version "3.3"
 	kotlin("jvm") version "1.5.21"
 	kotlin("plugin.spring") version "1.5.21"
 }
@@ -32,6 +33,7 @@ subprojects {
 	apply(plugin = "kotlin-kapt")
 	apply(plugin = "kotlin-spring")
 	apply(plugin = "jacoco")
+	apply(plugin = "org.sonarqube")
 
 	repositories {
 		mavenCentral()
@@ -73,4 +75,11 @@ tasks.bootJar {
 
 jacoco {
 	toolVersion = "0.8.7"
+}
+
+sonarqube {
+	properties {
+		property("sonar.sourceEncoding", "UTF-8")
+		property("sonar.core.codeCoveragePlugin", "jacoco")
+	}
 }
